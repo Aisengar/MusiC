@@ -49,3 +49,53 @@ ID;Titulo;Ruta_Archivo;Genero;Calificacion
 048;WAR;C:\Users\juana\Videos\SimpleMP3\WAR.mp3;Rawstyle;9
 049;You Make Me Horny;C:\Users\juana\Videos\SimpleMP3\You Make Me Horny.mp3;Hard Techno;9
 050;Zwitserse Jodel;C:\Users\juana\Videos\SimpleMP3\Zwitserse Jodel.mp3;Hardstyle;8
+051;Freddie Dredd - All Alone | (8D VERSION);C:\Users\juana\Videos\SimpleMP3\Freddie Dredd - All Alone | (8D VERSION).mp3;Phonk;7
+052;N.W.A. - Boys In The Hood;C:\Users\juana\Videos\SimpleMP3\N.W.A. - Boys In The Hood.mp3;Hip Hop;8
+053;Alcolirykoz - El Despilfarro (Video oficial);C:\Users\juana\Videos\SimpleMP3\Alcolirykoz - El Despilfarro (Video oficial).mp3;Rap Colombiano;9
+054;HDMI;C:\Users\juana\Videos\SimpleMP3\HDMI.mp3;Cloud Rap;6
+055;Kill Yourself (Part III);C:\Users\juana\Videos\SimpleMP3\Kill Yourself (Part III).mp3;Shadow Rap;7
+056;Really Slow Motion - Deadwood (Epic Dark Rock Action);C:\Users\juana\Videos\SimpleMP3\Really Slow Motion - Deadwood (Epic Dark Rock Action).mp3;Dark Rock;8
+057;XXXTENTACION - RIP Roach (Audio) (feat. $ki Mask The Slump God);C:\Users\juana\Videos\SimpleMP3\XXXTENTACION - RIP Roach (Audio) (feat. $ki Mask The Slump God).mp3;Trap Metal;8
+058;Xavier Wulf - " Psycho Pass " (Music Video);C:\Users\juana\Videos\SimpleMP3\Xavier Wulf - " Psycho Pass " (Music Video).mp3;Cloud Rap;7
+059;GHOSTEMANE x PARV0 - I duckinf hatw you [Human Error EP];C:\Users\juana\Videos\SimpleMP3\GHOSTEMANE x PARV0 - I duckinf hatw you [Human Error EP].mp3;Industrial Trap;8
+060;GHOSTEMANE - Mercury;C:\Users\juana\Videos\SimpleMP3\GHOSTEMANE - Mercury.mp3;Trap Metal;9
+061;Alcolirykoz - Rap, sexo y saxofón;C:\Users\juana\Videos\SimpleMP3\Alcolirykoz - Rap, sexo y saxofón.mp3;Rap Colombiano;9
+062;GHOSTEMANE - Squeeze;C:\Users\juana\Videos\SimpleMP3\GHOSTEMANE - Squeeze.mp3;Trap Metal;7
+063;GHOSTEMANE - VENOM;C:\Users\juana\Videos\SimpleMP3\GHOSTEMANE - VENOM.mp3;Trap Metal;8
+064;$UICIDEBOY$ - PARIS;C:\Users\juana\Videos\SimpleMP3\$UICIDEBOY$ - PARIS.mp3;Shadow Rap;9
+065;Pouya & Ghostemane - 1000 Rounds [Music Video];C:\Users\juana\Videos\SimpleMP3\Pouya & Ghostemane - 1000 Rounds [Music Video].mp3;Underground Rap;8
+066;Stay With Me;C:\Users\juana\Videos\SimpleMP3\Stay With Me.mp3;Alternative Hip Hop;6
+067;04. OmenXIII - LED (Produced By Grigoryan);C:\Users\juana\Videos\SimpleMP3\04. OmenXIII - LED (Produced By Grigoryan).mp3;Dark Trap;7
+068;Blood Oceans (How Many? );C:\Users\juana\Videos\SimpleMP3\Blood Oceans (How Many? ).mp3;Trap Metal;8
+069;GHOSTEMANE - Fed Up (AUDIO);C:\Users\juana\Videos\SimpleMP3\GHOSTEMANE - Fed Up (AUDIO).mp3;Trap Metal;8
+070;System Of A Down - Soldier Side (Official Audio);C:\Users\juana\Videos\SimpleMP3\System Of A Down - Soldier Side (Official Audio).mp3;Alternative Metal;9
+071;System of a Down - Lonely Day;C:\Users\juana\Videos\SimpleMP3\System of a Down - Lonely Day.mp3;Alternative Metal;9
+072;She's Like Heroin;C:\Users\juana\Videos\SimpleMP3\She's Like Heroin.mp3;Alternative Metal;8
+073;Vicinity Of Obscenity;C:\Users\juana\Videos\SimpleMP3\Vicinity Of Obscenity.mp3;Alternative Metal;7
+074;Tentative;C:\Users\juana\Videos\SimpleMP3\Tentative.mp3;Alternative Metal;8
+075;Stealing Society;C:\Users\juana\Videos\SimpleMP3\Stealing Society.mp3;Alternative Metal;8
+076;System Of A Down - Hypnotize - Hypnotize - HQ (2005) Lyrics;C:\Users\juana\Videos\SimpleMP3\System Of A Down - Hypnotize - Hypnotize - HQ (2005) Lyrics.mp3;Alternative Metal;9
+077;Kill Rock 'n Roll;C:\Users\juana\Videos\SimpleMP3\Kill Rock 'n Roll.mp3;Alternative Metal;7
+078;Dreaming;C:\Users\juana\Videos\SimpleMP3\Dreaming.mp3;Alternative Metal;8
+079;Attack;C:\Users\juana\Videos\SimpleMP3\Attack.mp3;Alternative Metal;8
+080;Beware - Deftones;C:\Users\juana\Videos\SimpleMP3\Beware - Deftones.mp3;Nu Metal;9
+081;Root;C:\Users\juana\Videos\SimpleMP3\Root.mp3;Nu Metal;7
+082;Deftones - Back To School (Mini Maggot) HD;C:\Users\juana\Videos\SimpleMP3\Deftones - Back To School (Mini Maggot) HD.mp3;Nu Metal;8
+083;Rickets;C:\Users\juana\Videos\SimpleMP3\Rickets.mp3;Nu Metal;7
+084;Please Please Please Let Me Get What I Want (2005 Remaster);C:\Users\juana\Videos\SimpleMP3\Please Please Please Let Me Get What I Want (2005 Remaster).mp3;Alternative Rock;8
+085;Entombed;C:\Users\juana\Videos\SimpleMP3\Entombed.mp3;Shoegaze Metal;9
+086;Mascara;C:\Users\juana\Videos\SimpleMP3\Mascara.mp3;Nu Metal;8
+087;Deftones - Cherry Waves (Lyrics);C:\Users\juana\Videos\SimpleMP3\Deftones - Cherry Waves (Lyrics).mp3;Shoegaze Metal;9
+088;Deftones - My Own Summer (Shove It) / Lyrics;C:\Users\juana\Videos\SimpleMP3\Deftones - My Own Summer (Shove It) / Lyrics.mp3;Nu Metal;9
+089;Deftones - Change (In The House Of Flies);C:\Users\juana\Videos\SimpleMP3\Deftones - Change (In The House Of Flies).mp3;Nu Metal;9
+090;Rio Romeo - Nothing's New (Lyrics);C:\Users\juana\Videos\SimpleMP3\Rio Romeo - Nothing's New (Lyrics).mp3;Indie Pop;8
+091;Over & Over;C:\Users\juana\Videos\SimpleMP3\Over & Over.mp3;Alternative;7
+092;Absence - Rio Romeo (Official Lyrics);C:\Users\juana\Videos\SimpleMP3\Absence - Rio Romeo (Official Lyrics).mp3;Indie Pop;8
+093;Bet - Rio Romeo;C:\Users\juana\Videos\SimpleMP3\Bet - Rio Romeo.mp3;Indie Pop;7
+094;Billie Eilish - What Was I Made For ? (Official Music Video);C:\Users\juana\Videos\SimpleMP3\Billie Eilish - What Was I Made For ? (Official Music Video).mp3;Pop Ballad;9
+095;Billie Eilish - Happier Than Ever (Official Music Video);C:\Users\juana\Videos\SimpleMP3\Billie Eilish - Happier Than Ever (Official Music Video).mp3;Alternative Pop;9
+096;Billie Eilish - idontwannabeyouanymore (Official Audio);C:\Users\juana\Videos\SimpleMP3\Billie Eilish - idontwannabeyouanymore (Official Audio).mp3;Alternative R&B;8
+097;Billie Eilish - when the party's over;C:\Users\juana\Videos\SimpleMP3\Billie Eilish - when the party's over.mp3;Minimalist Pop;8
+098;Billie Eilish - THE GREATEST (Official Lyric Video);C:\Users\juana\Videos\SimpleMP3\Billie Eilish - THE GREATEST (Official Lyric Video).mp3;Alternative Pop;9
+099;A Good Man with a Broken Heart;C:\Users\juana\Videos\SimpleMP3\A Good Man with a Broken Heart.mp3;Pop Ballad;7
+100;Bones - Oxygen;C:\Users\juana\Videos\SimpleMP3\Bones - Oxygen.mp3;Cloud Rap;8
