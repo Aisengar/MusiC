@@ -52,16 +52,7 @@ int main(int argc, char *argv[]) {
                 	printf("\nPresione cualquier tecla para continuar...");
                 	break;
             case 5: {
-					
-					//POO
-					Recomendador r;//Se llama a la clase Recomendador y se crea un objeto r
-                 	r.cargarCancionesDesdeLista();//Se cargan las canciones llamando al metodo correspondiente (internamente se usa el NodoCancion*)
-                 	r.generarGrafoInteracciones(5000);// las iteraciones del PageRank se puede modificar (1000-2000-5000-10000)
-                 	auto pr = r.ejecutarPageRank();//Ejeccion del pagerank
-                 	r.mostrarTop(10, pr);//Mostrar las primeras canciones que nos arroja el page rank (TOP10)
-                 
-                 	printf("\nPresione cualquier tecla para continuar...");
-                 	getchar(); 
+					menuRecomendaciones();
                  	break;}
             
             case 6: menuElimiarCancion(); break;

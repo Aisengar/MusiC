@@ -8,5 +8,6 @@ void inicializar_aleatorio();
 void menuReproduccionAleatoria();
 void buscarYReproducirPorTitulo();
 void menuElimiarCancion();
+void menuRecomendaciones();
 
 #endif
