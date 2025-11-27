@@ -24,5 +24,5 @@ NodoAVL* insertarAVL(NodoAVL* raiz, NodoCancion* nuevaCancion);
 NodoCancion* buscarPorTituloAVL(NodoAVL* raiz, const char* titulo);
 void liberarAVL(NodoAVL* raiz);
 void inicializarAVL();
-
+NodoAVL* EliminarNodoAvlTitulo(NodoAVL* raiz, const char* titulo);
 #endif

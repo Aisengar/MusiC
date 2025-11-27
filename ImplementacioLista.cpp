@@ -1,5 +1,4 @@
 #include "lista.h"
-
 // En estas lineas de codigo declaramos la funcion para crear nuestro nodo. con la estrustura declarada en el archivo lusta.h
 // Tambien se hace la creacion de la funcion donde se incertaran al final de nuetsra DLL(lista doble enlasada)
 // La funcion que utilizamos para imprimir todas las canciones de nuestra PLay list en orden.
@@ -8,7 +7,6 @@
 // Definición real de las variables globales
 NodoCancion* head = NULL;
 NodoCancion* tail = NULL;
-
 
 //Crear nodo
 NodoCancion* crearNodo(const char* id, const char* titulo, const char* ruta, const char* genero, int calificacion) {
@@ -89,4 +87,63 @@ void freeList() {
 
     head = tail = NULL; 
     printf("Memoria liberada correctamente.\n");
+}
+
+// ---ELIMINAR POR TÍTULO ---
+void eliminarCancionPorTitulo(const char* tituloBorrar) {
+    // 1. Verificar si la lista esta vacía
+    if (head == NULL) {
+        printf("La lista esta vacia, no se puede eliminar nada.\n");
+        return;
+    }
+
+    NodoCancion* curr = head;
+    int encontrado = 0;
+
+    //Buscar la cancion recorriendo el circulo 
+    do {
+        // strcmp devuelve 0 si las cadenas son identicas
+        if (strcmp(curr->titulo, tituloBorrar) == 0) {
+            encontrado = 1;
+            break; // Detenemos 'curr' en el nodo a borrar
+        }
+        curr = curr->next;
+    } while (curr != head);
+
+    // Si dimos toda la vuelta y no lo encontramos
+    if (!encontrado) {
+        printf("No se encontro la cancion: '%s'\n", tituloBorrar);
+        return;
+    }
+
+    // Proceder a desconectar el nodo 
+
+    // CASO A: Es el UNICO nodo en la lista
+    if (curr == head && curr == tail) {
+        head = NULL;
+        tail = NULL;
+    }
+    // CASO B: Es la CABEZA (Head)
+    else if (curr == head) {
+        head = head->next;       // El head avanza uno
+        head->prev = tail;       // El nuevo head mira atras al tail anterior
+        tail->next = head;       // El tail se actualiza para mirar al nuevo head
+    }
+    // CASO C: Es la COLA (Tail)
+    else if (curr == tail) {
+        tail = tail->prev;       // El tail retrocede uno
+        tail->next = head;       // El nuevo tail mira adelante al head original
+        head->prev = tail;       // El head mira atrás al nuevo tail
+    }
+    // CASO D: Esta en MEDIO de otros dos nodos
+    else {
+        // El nodo ANTERIOR salta al SIGUIENTE
+        curr->prev->next = curr->next;
+        // El nodo SIGUIENTE salta al ANTERIOR
+        curr->next->prev = curr->prev;
+    }
+
+    // 4. Liberar la memoria y confirmar
+    printf("Cancion eliminada correctamente: %s\n", curr->titulo);
+    free(curr);
 }

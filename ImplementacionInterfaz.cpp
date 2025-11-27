@@ -207,7 +207,7 @@ void buscarYReproducirPorTitulo() {
     printf("   BUSQUEDA RAPIDA POR TITULO (AVL)\n");
     printf("========================================\n");
     printf("Ingrese el titulo exacto de la cancion:\n> ");
-    printf("[  0 ] Salir al Menu Principal\n");
+    printf("[ 0 ] Salir al Menu Principal\n");
     
     // Limpiamos el buffer de entrada por seguridad
     fflush(stdin); 
@@ -257,3 +257,59 @@ void buscarYReproducirPorTitulo() {
         } 
 	}
 }
+
+void menuElimiarCancion(){
+	
+	char tituloBusqueda[128];
+    NodoCancion* cancionEncontrada = NULL;
+    int seguir = 1;
+    int tecla = 0;
+    
+    system("cls"); // Limpiar pantalla
+    printf("\n============================================\n");
+    printf("   ELIMINAR CANCION POR TITULO (Tabla Hash)   \n");
+    printf("========================================\n");
+    printf("Ingrese el titulo exacto de la cancion:\n> ");
+    printf("[ 0 ] Salir al Menu Principal\n");
+    
+    // Limpiamos el buffer de entrada por seguridad
+    fflush(stdin); 
+    
+    if (fgets(tituloBusqueda, sizeof(tituloBusqueda), stdin) != NULL) {
+		
+		
+		// fgets incluye el salto de linea al final, debemos eliminarlo
+        size_t len = strlen(tituloBusqueda);
+        if (len > 0 && tituloBusqueda[len - 1] == '\n') {
+            tituloBusqueda[len - 1] = '\0';
+        }
+        
+        printf("\nBuscando Cancion para eliminar:'%s'...\n", tituloBusqueda);
+        
+        //Eliminamos primero el nodo de nuestro arvol 
+        EliminarNodoAvlTitulo(raizAVL, tituloBusqueda);
+        
+        //Despues eliminamos el nodo de nuestra lista circular 
+        eliminarCancionPorTitulo(tituloBusqueda);
+	
+	}
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

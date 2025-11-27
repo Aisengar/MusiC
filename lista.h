@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Generamos la estructura de nuestro nodo basandonos en nuestro csv
+// Generamos la estructura de nuestro nodo basandonos en nuestro txt
 typedef struct NodoCancion {
     char id[16];                
     char titulo[128];
@@ -26,5 +26,8 @@ NodoCancion* crearNodo(const char* id, const char* titulo, const char* ruta, con
 void insertEnd(const char* id, const char* titulo, const char* ruta, const char* genero, int calificacion);
 void displayForward();
 void freeList();
+
+// Eliminar la cancion por el titulo
+void eliminarCancionPorTitulo(const char* tituloBorrar);
 
 #endif

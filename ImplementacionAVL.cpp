@@ -37,9 +37,17 @@ static int getBalance(NodoAVL* n) {
     return n ? altura(n->izq) - altura(n->der) : 0;
 }
 
+// Encuentra el nodo con el valor mínimo (el mas a la izquierda)
+static NodoAVL* minValorNodo(NodoAVL* nodo) {
+    NodoAVL* current = nodo;
+    // Bucle para encontrar la hoja más a la izquierda
+    while (current->izq != NULL)
+        current = current->izq;
+    return current;
+}
 // --- Rotaciones ---
 
-// Rotación simple a la derecha [Image of AVL tree Right Rotation]
+// Rotacion simple a la derecha [Image of AVL tree Right Rotation]
 static NodoAVL* rotacionDerecha(NodoAVL* y) {
     NodoAVL* x = y->izq;
     NodoAVL* T2 = x->der;
@@ -124,7 +132,7 @@ NodoAVL* insertarAVL(NodoAVL* raiz, NodoCancion* nuevaCancion) {
 
 // --- Busqueda AVL ---
 
-// Busca un nodo por el titulo de la canci0n. Retorna el puntero a NodoCancion o NULL.
+// Busca un nodo por el titulo de la cancion.Retorna el puntero a NodoCancion o NULL.
 NodoCancion* buscarPorTituloAVL(NodoAVL* raiz, const char* titulo) {
     if (!raiz) return NULL;
     
@@ -147,4 +155,86 @@ void liberarAVL(NodoAVL* raiz) {
         liberarAVL(raiz->der);
         free(raiz);
     }
+}
+
+
+
+// --- ELIMINACION POR TITULO ---
+NodoAVL* EliminarNodoAvlTitulo(NodoAVL* raiz, const char* titulo) {
+    // 1. REALIZAR EL BORRADO ESTANDAR DE BST
+    if (raiz == NULL)
+        return raiz;
+
+    int cmp = strcmp(titulo, raiz->datosCancion->titulo);
+
+    // Si el titulo es menor, buscar en la izquierda
+    if (cmp < 0) {
+        raiz->izq = EliminarNodoAvlTitulo(raiz->izq, titulo);
+    }
+    // Si el titulo es mayor, buscar en la derecha
+    else if (cmp > 0) {
+        raiz->der = EliminarNodoAvlTitulo(raiz->der, titulo);
+    }
+    // Si es igual, ESTE es el nodo a borrar
+    else {
+        // Caso 1: Nodo con solo un hijo o sin hijos
+        if ((raiz->izq == NULL) || (raiz->der == NULL)) {
+            NodoAVL* temp = raiz->izq ? raiz->izq : raiz->der;
+
+            // Caso: Sin hijos
+            if (temp == NULL) {
+                temp = raiz;
+                raiz = NULL;
+            } else { 
+                // Caso: Un hijo
+                // Copiamos el contenido del hijo al nodo actual
+                *raiz = *temp; 
+            }
+            free(temp); // Liberamos el nodo AVL (no la canción)
+        } else {
+            // Caso 2: Nodo con dos hijos
+            // Obtener el sucesor inorder (el más pequeño del subárbol derecho)
+            NodoAVL* temp = minValorNodo(raiz->der);
+
+            // Copiar los datos del sucesor a este nodo
+            raiz->datosCancion = temp->datosCancion;
+
+            // Borrar el sucesor del subárbol derecho
+            raiz->der = EliminarNodoAvlTitulo(raiz->der, temp->datosCancion->titulo);
+        }
+    }
+
+    // Si el arbol tenía un solo nodo, retornar
+    if (raiz == NULL)
+        return raiz;
+
+    // 2. ACTUALIZAR ALTURA DEL NODO ACTUAL
+    raiz->altura = 1 + max(altura(raiz->izq), altura(raiz->der));
+
+    // 3. OBTENER EL FACTOR DE BALANCE
+    int balance = getBalance(raiz);
+
+    // 4. BALANCEAR SI ES NECESARIO (4 Casos)
+
+    // Caso Izquierda-Izquierda
+    if (balance > 1 && getBalance(raiz->izq) >= 0)
+        return rotacionDerecha(raiz);
+
+    // Caso Izquierda-Derecha
+    if (balance > 1 && getBalance(raiz->izq) < 0) {
+        raiz->izq = rotacionIzquierda(raiz->izq);
+        return rotacionDerecha(raiz);
+    }
+
+    // Caso Derecha-Derecha
+    if (balance < -1 && getBalance(raiz->der) <= 0)
+        return rotacionIzquierda(raiz);
+
+    // Caso Derecha-Izquierda
+    if (balance < -1 && getBalance(raiz->der) > 0) {
+        raiz->der = rotacionDerecha(raiz->der);
+        return rotacionIzquierda(raiz);
+    }
+
+    return raiz;
 }
