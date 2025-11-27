@@ -3,7 +3,8 @@
 #include "audio.h"
 #include "archivo.h"
 #include "interfaz.h"
-# include "arbolAVL.h"
+#include "arbolAVL.h"
+#include "recomendador.h"
 
 //La clase prinsipal de nuestro proyecto donde esta nuestro menu principal
 int main(int argc, char *argv[]) {
@@ -34,7 +35,7 @@ int main(int argc, char *argv[]) {
     	
     	printf("Bienvenido a MusiC++! ingrese una opcion del menu\n");
     	printf("1.Imprimir lista de canciones\n2.Reproducir musica\n3.Reproducir Cancion aleatoria ->?\n");
-    	printf("4. Buscar cancion por su nombre usando AVL \nOpcion->");
+    	printf("4.Buscar cancion por su nombre usando AVL \n5.Recomendar canciones (PageRank)\nOpcion->");
     	scanf("%d",&opcion);// Se optiene y se guarda en memoria la opcion del usuario.
     	
     	
@@ -48,8 +49,19 @@ int main(int argc, char *argv[]) {
     		
     		case 4: buscarYReproducirPorTitulo();
                 	printf("\nPresione cualquier tecla para continuar...");
-                	
                 	break;
+            case 5: {
+				
+					Recomendador r;//Se llama a la clase Recomendador y se crea un objeto r
+                 	r.cargarCancionesDesdeLista();//Se cargan las canciones llamando al metodo correspondiente (internamente se usa el *NodoCancion)
+                 	r.generarGrafoInteracciones(5000);// las iteraciones del PageRank se puede modificar (1000-2000-5000-10000)
+                 	auto pr = r.ejecutarPageRank();
+                 	r.mostrarTop(10, pr);
+                 
+                 	printf("\nPresione cualquier tecla para continuar...");
+                 	getchar(); 
+                 	break;}
+            
     		
     		case 0: break; // Cerrar el programa.
     		
@@ -58,14 +70,6 @@ int main(int argc, char *argv[]) {
     	
 	}while (opcion != 0);
     
-    
-    
-    
-    
-    
-    
-    
-
     // Liverar memoria para que nuestro PC no explote :V
     cerrarAudio();
     freeList();

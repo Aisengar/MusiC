@@ -86,7 +86,7 @@ void inicializar_aleatorio() {
 //Funcion auxiliar
 NodoCancion* obtenerCancionAleatoria(NodoCancion* head) {
     if (head == NULL) {
-        return NULL; // La lista está vacía
+        return NULL; // La lista esta vacía
     }
     // Contar el numero total de nodos (canciones)
     // Contador es igual a 1 para evitar divicoin por 0 en caso de tener un solo nodo 
@@ -212,7 +212,7 @@ void buscarYReproducirPorTitulo() {
     // Limpiamos el buffer de entrada por seguridad
     fflush(stdin); 
 
-    // Usamos fgets para leer títulos que contengan espacios
+    // Usamos fgets para leer titulos que contengan espacios
     if (fgets(tituloBusqueda, sizeof(tituloBusqueda), stdin) != NULL) {
         
         // fgets incluye el salto de linea al final, debemos eliminarlo

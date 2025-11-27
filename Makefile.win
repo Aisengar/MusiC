@@ -5,8 +5,8 @@ CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
 RES      = Project1_private.res
-OBJ      = Nada.o ImplementacioLista.o ImplementacionArchivo.o ImplementacionInterfaz.o ImplementacionAudio.o Main.o ImplementacionAVL.o $(RES)
-LINKOBJ  = Nada.o ImplementacioLista.o ImplementacionArchivo.o ImplementacionInterfaz.o ImplementacionAudio.o Main.o ImplementacionAVL.o $(RES)
+OBJ      = Nada.o ImplementacioLista.o ImplementacionArchivo.o ImplementacionInterfaz.o ImplementacionAudio.o Main.o ImplementacionAVL.o ImplementacionRecomendador.o $(RES)
+LINKOBJ  = Nada.o ImplementacioLista.o ImplementacionArchivo.o ImplementacionInterfaz.o ImplementacionAudio.o Main.o ImplementacionAVL.o ImplementacionRecomendador.o $(RES)
 LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -L"C:/Users/juana/OneDrive/Escritorio/FinalProyectDataEstructure/librerias/lib" -lmingw32 -lSDL2main -lSDL2 -lSDL2_mixer -g3
 INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Users/juana/OneDrive/Escritorio/FinalProyectDataEstructure/librerias/include"
 CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++" -I"C:/Users/juana/OneDrive/Escritorio/FinalProyectDataEstructure/librerias/include"
@@ -45,6 +45,9 @@ Main.o: Main.cpp
 
 ImplementacionAVL.o: ImplementacionAVL.cpp
 	$(CPP) -c ImplementacionAVL.cpp -o ImplementacionAVL.o $(CXXFLAGS)
+
+ImplementacionRecomendador.o: ImplementacionRecomendador.cpp
+	$(CPP) -c ImplementacionRecomendador.cpp -o ImplementacionRecomendador.o $(CXXFLAGS)
 
 Project1_private.res: Project1_private.rc 
 	$(WINDRES) -i Project1_private.rc --input-format=rc -o Project1_private.res -O coff 
