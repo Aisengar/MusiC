@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
     	
     	printf("Bienvenido a MusiC++! ingrese una opcion del menu\n");
     	printf("1.Imprimir lista de canciones\n2.Reproducir musica\n3.Reproducir Cancion aleatoria ->?\n");
-    	printf("4.Buscar cancion por su nombre usando AVL \n5.Recomendar canciones (PageRank)\nOpcion->");
+    	printf("4.Buscar cancion por su nombre usando AVL \n5.Recomendar canciones (PageRank)\n0. Salir\nOpcion->");
     	scanf("%d",&opcion);// Se optiene y se guarda en memoria la opcion del usuario.
     	
     	
