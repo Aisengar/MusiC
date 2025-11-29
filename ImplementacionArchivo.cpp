@@ -15,7 +15,8 @@
 #include <string.h>
 #include "archivo.h"
 #include "lista.h"      // Necesario para insertEnd y acceder a 'tail'
-#include "arbolavl.h"   // <--- IMPORTANTE: Necesario para insertarAVL y raizAVL
+#include "arbolavl.h" 
+#include "tablaHash.h"  // <--- IMPORTANTE: Necesario para insertarAVL y raizAVL
 
 #define DELIMITADOR ";"
 //function (estatica para que sea privada de este archivo)
@@ -87,12 +88,13 @@ void load_data_from_csv(const char* filename) {
             //Insertar en la Lista Enlazada
             insertEnd(id_str, titulo_str, ruta_str, genero_str, calificacion_val);
             
-            // Esta linea de codigo es muy importante ya que nos permite añador los nodos a nuestro arbol AVL
+            // Esta linea de codigo es muy importante ya que nos permite añadir los nodos a nuestro arbol AVL
             // Usamos 'tail' porque insertEnd acaba de poner la nueva cancion al final de la lista enlazada
             // Basicamente lo que hacemos es incertar los nodos en nuestro arbol hasta que la la lista deje de ingresar nodos
             // y tail se puede usar ya que es una variable global de IMPORTANTE ENTENDER ESTO!
             if (tail != NULL) {
                  raizAVL = insertarAVL(raizAVL, tail);
+                 insertarHash(tail);//Para insertar tambien el la tabla hash
             }
         }
     }

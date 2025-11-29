@@ -1,7 +1,7 @@
 #ifndef TABLASHASH_H
 #define TABLASHASH_H
 #include "lista.h"
-#define Tamaño_Tabla 101
+#define Size_Tabla 101
 
 typedef struct NodoHash{
     NodoCancion* datosCancion;

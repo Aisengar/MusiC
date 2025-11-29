@@ -3,7 +3,7 @@
 #include <string.h>
 #include "tablaHash.h"
 
-static NodoHash* tablaHash[Tamaño_Tabla];
+static NodoHash* tablaHash[Size_Tabla];
 
 // Funcion hash 
 unsigned int hash(const char* str){
@@ -12,11 +12,11 @@ unsigned int hash(const char* str){
     while ((c = *str++)){
         hash = ((hash << 5) + hash) + c;
     }
-    return hash % Tamaño_Tabla;
+    return hash % Size_Tabla;
 }
 
 void inicializarHash(){
-    for(int i= 0; i< Tamaño_Tabla; i++){
+    for(int i= 0; i< Size_Tabla; i++){
         tablaHash[i] = NULL;
     }
 }
@@ -65,7 +65,7 @@ void eliminarPorHash(const char* titulo){
 }
 
 void liberarHash(){
-    for(int i=0; i< Tamaño_Tabla; i++){
+    for(int i=0; i< Size_Tabla; i++){
         NodoHash* actual = tablaHash[i];
         while (actual != NULL){
             NodoHash* temp = actual; 
@@ -77,9 +77,9 @@ void liberarHash(){
 }
 
 void imprimirHash(){
-    printf("\n VISUALIZACION DE LA TABLA HASH (TAMAÑO: %d)\n", Tamaño_Tabla);
+    printf("\n VISUALIZACION DE LA TABLA HASH (TAMAÑO: %d)\n", Size_Tabla);
     int contNodos,indicesocupados = 0;
-    for(int i=0; i< Tamaño_Tabla; i++){
+    for(int i=0; i< Size_Tabla; i++){
         if(tablaHash[i] != NULL){
             indicesocupados++;
             printf("[%03d]: ", i);
@@ -93,5 +93,5 @@ void imprimirHash(){
         }
     }
     printf("Estadisticas: %d Canciones en %d indices.\n", contNodos, indicesocupados);
-    printf("Factor de Carga: %.2f%%\n", (float)indicesocupados/Tamaño_Tabla * 100);
+    printf("Factor de Carga: %.2f%%\n", (float)indicesocupados/Size_Tabla * 100);
 }

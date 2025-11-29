@@ -5,6 +5,7 @@
 #include "interfaz.h"
 #include "arbolAVL.h"
 #include "recomendador.h"
+#include "tablaHash.h"
 
 //La clase prinsipal de nuestro proyecto donde esta nuestro menu principal
 int main(int argc, char *argv[]) {

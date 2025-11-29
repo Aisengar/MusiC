@@ -11,6 +11,7 @@
 #include "arbolavl.h"
 #include "interfaz.h"
 #include "recomendador.h"
+#include "tablaHash.h"
 
 //Menu para pageRank que contiene las interaciones desde 1000 al 10000
 void menuRecomendaciones() {
@@ -301,44 +302,66 @@ void buscarYReproducirPorTitulo() {
 	}
 }
 
-void menuElimiarCancion(){
-	
-	char tituloBusqueda[128];
-    NodoCancion* cancionEncontrada = NULL;
-    int seguir = 1;
-    int tecla = 0;
+
+void menuElimiarCancion() {
+    char tituloBusqueda[128];
+    int subOpcion = 0;
     
-    system("cls"); // Limpiar pantalla
-    printf("\n============================================\n");
-    printf("   ELIMINAR CANCION POR TITULO (Tabla Hash)   \n");
-    printf("========================================\n");
-    printf("Ingrese el titulo exacto de la cancion:\n> ");
-    printf("[ 0 ] Salir al Menu Principal\n");
-    
-    // Limpiamos el buffer de entrada por seguridad
-    fflush(stdin); 
-    
-    if (fgets(tituloBusqueda, sizeof(tituloBusqueda), stdin) != NULL) {
-		
-		
-		// fgets incluye el salto de linea al final, debemos eliminarlo
-        size_t len = strlen(tituloBusqueda);
-        if (len > 0 && tituloBusqueda[len - 1] == '\n') {
-            tituloBusqueda[len - 1] = '\0';
+    do {
+        system("cls");
+        printf("\n============================================\n");
+        printf("   GESTION DE ELIMINACION (Hash/AVL/Lista)  \n");
+        printf("============================================\n");
+        printf("1. Ver estructura visual de la Tabla Hash (Extra)\n");
+        printf("2. Eliminar una cancion\n");
+        printf("0. Volver al Menu Principal\n");
+        printf("============================================\n");
+        printf("Opcion > ");
+        
+        if (scanf("%d", &subOpcion) != 1) {
+             while(getchar() != '\n');
+             continue; 
         }
-        
-        printf("\nBuscando Cancion para eliminar:'%s'...\n", tituloBusqueda);
-        
-        //Eliminamos primero el nodo de nuestro arvol 
-        EliminarNodoAvlTitulo(raizAVL, tituloBusqueda);
-        
-        //Despues eliminamos el nodo de nuestra lista circular 
-        eliminarCancionPorTitulo(tituloBusqueda);
-	
-	}
-	
-	
-	
+        fflush(stdin); 
+
+        if (subOpcion == 1) {
+            imprimirHash();
+            printf("\nPresione cualquier tecla para continuar");
+            _getch();
+        }
+        else if (subOpcion == 2) {
+            printf("\nIngrese el titulo exacto a ELIMINAR:\n> ");
+            
+            if (fgets(tituloBusqueda, sizeof(tituloBusqueda), stdin) != NULL) {
+                // Limpieza del salto de línea
+                size_t len = strlen(tituloBusqueda);
+                if (len > 0 && tituloBusqueda[len - 1] == '\n') {
+                    tituloBusqueda[len - 1] = '\0';
+                }
+                
+                // Verificar existencia de Cancion en Hash (O(1))
+                if (buscarPorHash(tituloBusqueda) == NULL) {
+                    printf("\nError: La cancion '%s' no existe.\n", tituloBusqueda);
+                } else {
+                    printf("\nEliminando '%s' de todas las estructuras...\n", tituloBusqueda);
+                    
+                    // Desvincular de la Tabla Hash
+                    eliminarPorHash(tituloBusqueda);
+                    
+                    // Eliminar del Árbol AVL
+                    raizAVL = EliminarNodoAvlTitulo(raizAVL, tituloBusqueda);
+                    
+                    // Eliminar de la Lista y Liberar Memoria RAM
+                    eliminarCancionPorTitulo(tituloBusqueda);
+                    
+                    printf(">> Proceso finalizado correctamente.\n");
+                }
+                printf("\nPresione cualquier tecla para continuar...");
+                _getch();
+            }
+        }
+
+    } while (subOpcion != 0);
 }
 
 
