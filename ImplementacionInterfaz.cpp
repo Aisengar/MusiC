@@ -10,6 +10,7 @@
 #include <time.h>   // Para time()
 #include "arbolavl.h"
 #include "interfaz.h"
+#include "recomendador.h"
 
 //Menu para pageRank que contiene las interaciones desde 1000 al 10000
 void menuRecomendaciones() {
